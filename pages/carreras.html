@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CarreraLy - Carreras</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header>
+
+        <a href="../index.html" class="headerIcon">
+            <img src="../rsc/img/icono.svg" alt="">
+            CarreraLy
+        </a>
+        <div class="separador-flex"></div>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./materias.html">Materias</a></li>
+            <li><a href="./carreras.html">Carreras</a></li>
+            <li><a href="#"></a>#</li>
+        </ul>
+
+    </header>
+    <main>
+        <form action="" id="nuevaCarrera">
+            <!-- Patron de id de materia -->
+            <label for="nombreCarrera">Nombre de la carrera</label>
+            <input type="text" class="span2" name="newCarrera" id="nombreCarrera" required>
+
+            <label for="facultadCarrera">Nombre de la facultad</label>
+            <input type="text" class="span2" name="newFac" id="facultadCarrera" required>
+
+            <label for="listaCuatrimestres" class="span3">Trayectoria de la carrera</label>
+
+            <ol class="span3" id="listaCuatrimestres">
+                <li>
+                    <input type="text" name="nombreCuatri01" placeholder="Porcion de la carrera, ej CBC o 1er Cuatrimestre" required>
+                    <input type="text" name="cuatri01" required>
+                    <button type="button" onclick="nuevoCuatri()" id="agregarCuatri">+</button>
+                </li>
+            </ol>
+
+
+            <input type="submit" value="Cargar nueva carrera">
+        </form>
+
+    </main>
+    <script src="../main.js" defer></script>
+    <script src="../js/carreras.js" defer></script>
+</body>
+
+</html>

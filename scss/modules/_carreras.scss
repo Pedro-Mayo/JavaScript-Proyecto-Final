@@ -1,0 +1,8 @@
+form#nuevaCarrera{
+    display: grid;
+}
+
+#listaCuatrimestres>li {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+}

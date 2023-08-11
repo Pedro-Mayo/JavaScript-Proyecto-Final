@@ -1,0 +1,40 @@
+table, td{
+    border: 0.125rem solid black;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    padding: 0.5rem;
+    border: 0.125rem solid black;
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    &.tituloTablaMat{
+        background-color: black;
+        color: white;
+    }
+}
+
+.tituloTablaMat{
+    div{
+        width:100%;
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+}
+
+form{
+    padding: 1rem;
+    display: inline-grid;
+    vertical-align: top;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem;
+    justify-content: space-around;
+}
+
+table{
+    display: inline-block;
+}

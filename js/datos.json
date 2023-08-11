@@ -1,0 +1,66 @@
+{
+    "listaMaterias": [
+        {
+            "codigo": "28",
+            "nombre": "Analisis Matematico",
+            "creditos": 0,
+            "hsSemanales": 9,
+            "totalHs": 144,
+            "correlativas": "",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "27",
+            "nombre": "Algebra",
+            "creditos": 0,
+            "hsSemanales": 9,
+            "totalHs": 144,
+            "correlativas": "",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "3",
+            "nombre": "Fisica",
+            "creditos": 0,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "5",
+            "nombre": "Quimica",
+            "creditos": 0,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "24",
+            "nombre": "Sociedad y Estado",
+            "creditos": 0,
+            "hsSemanales": 4,
+            "totalHs": 64,
+            "correlativas": "",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "40",
+            "nombre": "IPC",
+            "creditos": 0,
+            "hsSemanales": 4,
+            "totalHs": 64,
+            "correlativas": "",
+            "estado": "Disponible"
+        }
+    ],
+
+
+    "stringsEstadosMateria": {
+        "disponible": "Disponible",
+        "cursando": "Cursando",
+        "aprobado": "Aprobado",
+        "faltanCorrelativas": "Faltan Correlativas"
+    }
+}

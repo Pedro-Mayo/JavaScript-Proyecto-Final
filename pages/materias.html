@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CarreraLy - Materias</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <header>
+
+        <a href="../index.html" class="headerIcon">
+            <img src="../rsc/img/icono.svg" alt="">
+            CarreraLy
+        </a>
+        <div class="separador-flex"></div>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./materias.html">Materias</a></li>
+            <li><a href="./carreras.html">Carreras</a></li>
+            <li><a href="#"></a>#</li>
+        </ul>
+
+    </header>
+    <main>
+
+
+        <table id="tablaMaterias">
+            <thead>
+                <tr>
+                    <th class="tituloTablaMat" colspan="8"><div>Materias <a href="javascript:armarTablaMaterias()">Refrescar Tabla🔄</a></div></th>
+                </tr>
+                <tr>
+                    <th>ID materia</th>
+                    <th>Nombre Materia</th>
+                    <th>Creditos</th>
+                    <th>Hotas Semanales</th>
+                    <th>Horas Totales</th>
+                    <th>Correlativas</th>
+                    <th>Estado</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="tablaMateriasBody">
+            </tbody>
+        </table>
+
+
+        <form action="" id="nuevaMateria">
+            <!-- Patron de id de materia -->
+            <label for="idElegir">ID de la Materia</label>
+            <input type="text" name="newID" pattern="(electiva)|((\d+)(\.\d+)?)" id="idElegir" required>
+
+            <label for="matElegir">Nombre de la materia</label>
+            <input type="text" name="newMat" id="matElegir" required>
+
+            <label for="credElegir">Numero de creditos que otorga</label>
+            <input type="number" min="0" name="newCred" id="credElegir" required>
+
+            <label for="hsSemElegir">Horas semanales</label>
+            <input type="number" min="1" name="newHsS" id="hsSemElegir" required>
+
+            <label for="hsTotElegir">Horas totales</label>
+            <input type="number" min="16" name="newHst" id="hsTotElegir" required>
+
+            <label for="Correlativas">Correlativas</label>
+            <input type="text" name="newCor" value="" id="corElegir">
+
+            <label for="estadoElegir">Estado de la materia</label>
+            <select name="newEst" id="estadoElegir">
+                <option value="disponible">Disponible</option>
+                <option value="cursando">Cursando</option>
+                <option value="aprobado">Aprobado</option>
+            </select>
+
+            <input type="submit" value="Cargar nueva materia">
+        </form>
+        <p>Las materias agregadas y borradas se guardan. Si no hay materias se carga un default.</p>
+        <p>Para agregar una materia hay que cargarla con su ID de materia, que puede ser un numero, o un numero seguido por un punto seguido por otro numero. Ej: 99, 25.3</p>
+
+
+    </main>
+    <script src="../main.js" defer></script>
+    <script src="../js/materias.js" defer></script>
+    
+</body>
+
+</html>
