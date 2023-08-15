@@ -55,12 +55,39 @@
             "estado": "Disponible"
         }
     ],
-
-
     "stringsEstadosMateria": {
         "disponible": "Disponible",
         "cursando": "Cursando",
         "aprobado": "Aprobado",
         "faltanCorrelativas": "Faltan Correlativas"
-    }
+    },
+    
+    "listaCarreras": [
+        {
+            "titulo": "Analisis en Sistemas",
+            "facultad": "Ingenieria",
+            "cuatrimestres": [
+                {
+                    "titulo": "CBC",
+                    "materias": "28, 27, 3, 5, 24, 40"
+                },
+                {
+                    "titulo": "Tercer Cuatrimestre",
+                    "materias": "81.01, 81.02, 95.14"
+                },
+                {
+                    "titulo": "Cuarto Cuatrimestre",
+                    "materias": "81.11, 95.57, 95.15"
+                },
+                {
+                    "titulo": "Quinto Cuatrimestre",
+                    "materias": "81.04, 91.39, 95.58, 95.02"
+                },
+                {
+                    "titulo": "Sexto Cuatrimestre",
+                    "materias": "91.41, 95.03, 95.20, 95.08"
+                }
+            ]
+        }
+    ]
 }

@@ -3,13 +3,13 @@ const formMateriaNueva = document.getElementById("nuevaMateria");
 
 class Materia {
     constructor(codigo, nombre, creditos, hsSemanales, totalHs, correlativas, estado) {
-        this.codigo       = String(codigo),
-        this.nombre       = String(nombre),
-        this.creditos     = Number(creditos),
-        this.hsSemanales  = Number(hsSemanales),
-        this.totalHs      = Number(totalHs),
-        this.correlativas = String(correlativas),
-        this.estado       = String(stringsEstadosMateria[estado] || stringsEstadosMateria.disponible)
+        this.codigo = String(codigo),
+            this.nombre = String(nombre),
+            this.creditos = Number(creditos),
+            this.hsSemanales = Number(hsSemanales),
+            this.totalHs = Number(totalHs),
+            this.correlativas = String(correlativas),
+            this.estado = String(stringsEstadosMateria[estado] || stringsEstadosMateria.disponible)
     }
 
     set estadoMateria(estado) {
@@ -28,20 +28,40 @@ function agregarMateria(codigo, nombre, creditos, hsSemanales, totalHs, correlat
 
         //cada materia agregada refresca la copia en localstorage
         localStorage.setItem("listaMaterias", JSON.stringify(listaMaterias));
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Exito',
+            text: 'Materia agregada correctamente'
+        })
     }
     else {
-        alert("Materia ya existe");
+        Swal.fire({
+            icon: 'error',
+            title: 'Ups...',
+            text: 'Ya existe una materia con el mismo ID',
+        })
     }
 }
 
 
 //borra la materia solicitada en el array en memoria y en localstorage
 function borrarMateria(index) {
-    listaMaterias.splice(index, 1);
-    localStorage.setItem("listaMaterias", JSON.stringify(listaMaterias));
-    armarTablaMaterias();
-}
 
+    Swal.fire({
+        icon: 'warning',
+        title: 'Seguro?',
+        text: 'Vas a borrar la materia seleccionada',
+        showCancelButton: true
+    }).then(resultado => {
+        if (resultado.isConfirmed) {
+            listaMaterias.splice(index, 1);
+            localStorage.setItem("listaMaterias", JSON.stringify(listaMaterias));
+            armarTablaMaterias();
+        }
+    }
+    )
+}
 
 //la funcion es llamada al armar la tabla de materias, es pasada el index de la materia actual
 function crearCeldaBorrar(index) {
@@ -103,13 +123,13 @@ function armarTablaMaterias() {
 formMateriaNueva.addEventListener("submit", form => {
     form.preventDefault();
     //los valores son condicionados en el input (patrones y valores minimos)
-    const codigo   = formMateriaNueva.newID.value
-    const nombre   = formMateriaNueva.newMat.value;
+    const codigo = formMateriaNueva.newID.value
+    const nombre = formMateriaNueva.newMat.value;
     const creditos = formMateriaNueva.newCred.value;
-    const hsSemanales  = formMateriaNueva.newHsS.value;
-    const totalH       = formMateriaNueva.newHst.value;
+    const hsSemanales = formMateriaNueva.newHsS.value;
+    const totalH = formMateriaNueva.newHst.value;
     const correlativas = formMateriaNueva.newCor.value;
-    const estado   = formMateriaNueva.newEst.value;
+    const estado = formMateriaNueva.newEst.value;
     //agrega lo obtenido y refresca la tabla
     agregarMateria(codigo, nombre, creditos, hsSemanales, totalH, correlativas, estado);
     armarTablaMaterias();

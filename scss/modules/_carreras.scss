@@ -1,8 +1,20 @@
-form#nuevaCarrera{
+#tablaCarreras {
+
+    td{
+        padding: 1rem;
+    }
+
+    th {
+        padding: 1rem;
+        background-color: black;
+        color: white;
+    }
+}
+
+form#nuevaCarrera {
     display: grid;
 }
 
-#listaCuatrimestres>li {
-    display: grid;
-    grid-template-columns: 1fr 1fr auto;
+#listaCuatrimestres>li>input {
+    width: 40%;
 }
