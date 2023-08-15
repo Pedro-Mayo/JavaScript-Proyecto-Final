@@ -53,6 +53,10 @@ header {
     align-items: baseline;
     border-bottom: 0.125rem solid black;
 
+    &>*{
+        margin: 1rem;
+    }
+
     #tituloInfo {}
 
     #infoCreditos,
@@ -65,7 +69,7 @@ header {
 
     padding: 0.5rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.5rem;
 }
 
@@ -82,4 +86,17 @@ header {
     .idMateria {
         justify-self: start;
     }
+}
+
+.cuatrimestre{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    border-color: black;
+    border-top: 0.125rem solid;
+    
+}
+
+.span5{
+    grid-column: span 5;
 }

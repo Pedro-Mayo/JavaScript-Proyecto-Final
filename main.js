@@ -52,3 +52,10 @@ async function inicializar(ruta, callback) {
     }
 
 }
+
+//*********************************************************************************************************************
+// regex del codigo de materias, devuelve los strings con el formato numero o numero.numero
+const regexMaterias = new RegExp(/electiva|\d+(\.\d+)?/, "g");
+function parsearMaterias(strMaterias) {
+    return strMaterias.match(regexMaterias).filter(largoStr => largoStr > 0);
+}

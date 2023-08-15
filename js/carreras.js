@@ -2,6 +2,7 @@ const formCarreraNueva = document.getElementById("nuevaCarrera");
 const listaCuatrimestres = document.getElementById("listaCuatrimestres");
 
 //*********************************************************************************************************************
+// clase de la carrera, es una clase por si se quiere agregr algun metodo
 class Carrera {
     constructor(titulo, facultad, cuatrimestres) {
         this.titulo = String(titulo),
@@ -12,20 +13,28 @@ class Carrera {
 }
 
 
+//*********************************************************************************************************************
+// las carreras no se arman directo con la clase, se arman a traves de esta funcion para poder tratar los datos correctamente
+
+
 function agregarCarrera(titulo, facultad, cuatrimestres) {
 
     const carreraExiste = (listaCarreras.length > 0 && listaCarreras.find(carrera => carrera.titulo === titulo));
     if (!carreraExiste) {
 
+        //el objeto cuatrimestres no viene parseado, se parse cada lista de materias
         for (cuatri of cuatrimestres) {
             cuatri.materias = parsearMaterias(cuatri.materias).join(", ")
         }
 
+        //cada carrera creada es anonima y esta guardada en el array central. actualiza localstorage
         listaCarreras.push(new Carrera(titulo, facultad, cuatrimestres));
         localStorage.setItem("listaCarreras", JSON.stringify(listaCarreras));
 
+        //refresca la lista despues de la creacion
         armarListaCarreras();
 
+        //alerta confirmando
         Swal.fire({
             icon: 'success',
             title: 'Exito',
@@ -42,17 +51,14 @@ function agregarCarrera(titulo, facultad, cuatrimestres) {
 }
 
 
-//*********************************************************************************************************************
-// regex del codigo de materias, devuelve los strings con el formato numero o numero.numero
-const regexMaterias = new RegExp(/electiva|\d+(\.\d+)?/, "g");
-function parsearMaterias(strMaterias) {
-    return strMaterias.match(regexMaterias).filter(largoStr => largoStr > 0);
-}
+
 
 
 
 //*********************************************************************************************************************
 //lee la cantidad de hijos del form de carrera y hace un array con un objeto x cada cuatrimestre
+// por la disposicion del html el 1er hijo es el titulo y el segundo el strin de materias
+
 
 function armarCuatrimestres() {
     const cuatrimestres = [];
@@ -68,20 +74,24 @@ function armarCuatrimestres() {
 //*********************************************************************************************************************
 //agrega una fila de cuatrimestre mas al form de carreras
 function nuevoCuatri() {
-
+    
+    //borra el boton actual (asi solo la ultima instancia lo posee)
     document.getElementById("agregarCuatri").remove();
 
-
+    //la lista de cuatrimestres del form es una lista, se agrega un item nuevo por cada cuatrimestre nuevo
     const elementoLista = document.createElement("li");
+
 
     //el numero de elemento nuevo, numero actual mas uno, padeado
     let indiceElementoNuevo = String(listaCuatrimestres.childElementCount + 1).padStart(2, "0");
 
+    //nuevo item que incluye el boton que llama a esta funcion, para seguir agregando cuatrimestres
     elementoLista.innerHTML = `
     <input type="text" name="nombreCuatri${indiceElementoNuevo}" placeholder="Porcion de la carrera, ej CBC o 1er Cuatrimestre" required>
     <input type="text" name="cuatri${indiceElementoNuevo}" required>
     <button type="button" onclick="nuevoCuatri()" id="agregarCuatri">+<\/button>
     `;
+    // se agrega el cuatri
     listaCuatrimestres.appendChild(elementoLista);
 }
 
@@ -101,7 +111,10 @@ formCarreraNueva.addEventListener("submit", form => {
 })
 
 //*********************************************************************************************************************
-//
+// se llama cuando se selecciona una carrera y se pide armar la tabla con esta
+
+
+
 function armarTablaCarreras() {
 
     //buscamos la tabla de carreras
@@ -135,6 +148,7 @@ function armarTablaCarreras() {
 }
 
 //*********************************************************************************************************************
+// crea las opciones del dropdown de carreras
 
 function armarListaCarreras() {
     const listaTabla = document.getElementById("carreraElegida");
@@ -150,20 +164,27 @@ function armarListaCarreras() {
 }
 
 //*********************************************************************************************************************
+// llama a prompt, si es confirmado borra la carrera elegida
+
 
 function borrarCarrera() {
+
+    //obtiene la materia seleccionada
     const carreraElegidaenLista = document.getElementById("carreraElegida").value;
 
+    //pregunta
     Swal.fire({
         icon: 'warning',
         title: 'Seguro?',
         text: 'Vas a borrar la carrera seleccionada',
         showCancelButton: true
     })
+    //ejecuta si confirmado
     .then(resultado => {
         if (resultado.isConfirmed){
+
+            //elimina del array, actualiza el localstorage y la lista para elegir las carreras que existen
             listaCarreras.splice(carreraElegidaenLista,1);
-            localStorage.setItem("listaCarreras", JSON.stringify(listaCarreras));
             localStorage.setItem("listaCarreras", JSON.stringify(listaCarreras));
             armarListaCarreras();
 
