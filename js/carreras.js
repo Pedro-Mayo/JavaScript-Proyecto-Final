@@ -23,7 +23,7 @@ function agregarCarrera(titulo, facultad, cuatrimestres) {
     if (!carreraExiste) {
 
         //el objeto cuatrimestres no viene parseado, se parse cada lista de materias
-        for (cuatri of cuatrimestres) {
+        for (let cuatri of cuatrimestres) {
             cuatri.materias = parsearMaterias(cuatri.materias).join(", ")
         }
 
@@ -62,7 +62,7 @@ function agregarCarrera(titulo, facultad, cuatrimestres) {
 
 function armarCuatrimestres() {
     const cuatrimestres = [];
-    for (cuatri of (listaCuatrimestres.children)) {
+    for (const cuatri of (listaCuatrimestres.children)) {
         cuatrimestres.push({ titulo: cuatri.children[0].value, materias: cuatri.children[1].value })
     }
     return cuatrimestres
@@ -137,7 +137,7 @@ function armarTablaCarreras() {
 
         const arrayCuatrimestres = carreraElegida.cuatrimestres;
 
-        for (cuatrimestre of arrayCuatrimestres) {
+        for (const cuatrimestre of arrayCuatrimestres) {
             const nuevoRow = document.createElement("tr");
             nuevoRow.innerHTML = `<td>${cuatrimestre.titulo}<\/td><td>${cuatrimestre.materias}<\/td>`;
             bufferArmado.appendChild(nuevoRow);
@@ -154,7 +154,7 @@ function armarListaCarreras() {
     const listaTabla = document.getElementById("carreraElegida");
     listaTabla.innerHTML = "";
 
-    for (indiceCarrera in listaCarreras) {
+    for (const indiceCarrera in listaCarreras) {
 
         const opcion = document.createElement("option");
         opcion.innerHTML = listaCarreras[indiceCarrera].titulo;

@@ -90,13 +90,13 @@ header {
 
 .cuatrimestre{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
     border-color: black;
     border-top: 0.125rem solid;
     
 }
 
-.span5{
-    grid-column: span 5;
+.span7{
+    grid-column: span 7;
 }

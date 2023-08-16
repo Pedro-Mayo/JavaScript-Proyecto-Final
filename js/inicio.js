@@ -36,7 +36,7 @@ function displayCarrera() {
 
         const tituloCuatri = document.createElement("h4");
         tituloCuatri.innerHTML = cuatrimestre.titulo;
-        tituloCuatri.className = "span5";
+        tituloCuatri.className = "span7";
         divisor.appendChild(tituloCuatri);
         seccionMaterias.appendChild(divisor);
 
@@ -58,9 +58,8 @@ function displayCarrera() {
                                              <p>Requerimientos<\/p>
                                              <p>${materiaActual.correlativas}<\/p>
                                          <\/div>
-                                         <div class="creditos">
                                            <p>Creditos: ${materiaActual.creditos}<\/p>
-                                         <\/div>`
+                                           <p>Estado: ${materiaActual.estado}<\/p>`;
             }
             divisor.appendChild(divisorMateria);
 
