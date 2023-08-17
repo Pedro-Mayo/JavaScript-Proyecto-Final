@@ -53,6 +53,141 @@
             "totalHs": 64,
             "correlativas": "",
             "estado": "Disponible"
+        },
+        {
+            "codigo": "81.01",
+            "nombre": "Analisis Matematico II",
+            "creditos": 8,
+            "hsSemanales": 8,
+            "totalHs": 128,
+            "correlativas": "CBC",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "81.02",
+            "nombre": "Algebra II",
+            "creditos": 8,
+            "hsSemanales": 8,
+            "totalHs": 128,
+            "correlativas": "CBC",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.14",
+            "nombre": "Algoritmos y Programacion I",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "CBC",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "81.11",
+            "nombre": "Matematica Discreta",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "CBC",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.57",
+            "nombre": "Organizacion del Computador",
+            "creditos": 8,
+            "hsSemanales": 8,
+            "totalHs": 128,
+            "correlativas": "95.14",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.15",
+            "nombre": "Algoritmos y Programacion II",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "95.14",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "81.04",
+            "nombre": "Probabilidad y Estadistica B",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "81.01-81.02",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "91.39",
+            "nombre": "Estructuras y Procesos Organizacionales",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "22 creditos aprobados",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.58",
+            "nombre": "Organizacion de Datos",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "95.57-95.15",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.02",
+            "nombre": "Algoritmos y Programacion III",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "95.15",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "91.41",
+            "nombre": "Economia de las Organizaciones ",
+            "creditos": 4,
+            "hsSemanales": 4,
+            "totalHs": 64,
+            "correlativas": "81.04-91.39",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.03",
+            "nombre": "Sistemas Operativos",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "95.58",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.20",
+            "nombre": "Metodos y Modelos en la Ingenieria de Software I ",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "95.02-95.58",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "95.08",
+            "nombre": "Taller de Programacion",
+            "creditos": 4,
+            "hsSemanales": 4,
+            "totalHs": 64,
+            "correlativas": "95.02-95.57",
+            "estado": "Disponible"
+        },
+        {
+            "codigo": "electiva",
+            "nombre": "Electivas",
+            "creditos": 6,
+            "hsSemanales": 6,
+            "totalHs": 96,
+            "correlativas": "",
+            "estado": "Disponible"
         }
     ],
     "stringsEstadosMateria": {
@@ -61,7 +196,6 @@
         "aprobado": "Aprobado",
         "faltanCorrelativas": "Faltan Correlativas"
     },
-    
     "listaCarreras": [
         {
             "titulo": "Analisis en Sistemas",
