@@ -21,7 +21,6 @@ async function inicializar(ruta, callback) {
         stringsEstadosMateria = stringsE;
     } //fetchea los defaults.
     else {
-        console.log(Boolean(listC))
         let respuestaJson = {};
 
         //fetchea el default de materias

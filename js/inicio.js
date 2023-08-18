@@ -121,4 +121,4 @@ function progresarMateria(idMateria) {
 
 }
 
-inicializar("../js/datos.json", armarListaCarreras);
+inicializar("./js/datos.json", armarListaCarreras);
