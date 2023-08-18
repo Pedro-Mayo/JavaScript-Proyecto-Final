@@ -88,7 +88,7 @@ function nuevoCuatri() {
     //nuevo item que incluye el boton que llama a esta funcion, para seguir agregando cuatrimestres
     elementoLista.innerHTML = `
     <input type="text" name="nombreCuatri${indiceElementoNuevo}" placeholder="Porcion de la carrera, ej CBC o 1er Cuatrimestre" required>
-    <input type="text" name="cuatri${indiceElementoNuevo}" required>
+    <input type="text" name="cuatri${indiceElementoNuevo}" placeholder="IDs de las materias" required>
     <button type="button" onclick="nuevoCuatri()" id="agregarCuatri">+<\/button>
     `;
     // se agrega el cuatri
